@@ -1,3 +1,4 @@
+
 class NegotiationController{
   
   constructor(){
@@ -9,20 +10,14 @@ class NegotiationController{
   }
   add(event){
     event.preventDefault();
-
-   let data = new Date(
-        ...this._inputData.value
-        .split('-')
-        .map((item, index) => item - index % 2)
-      );
-    
+   
       let negotiation = new Negotiation(
-        data,
+       DateHelper.textToDate(this._inputData.value),
         this._inputAmount.value,
         this._inputValue.value
       );
-   
-      console.log(negotiation);
+      
+      console.log(DateHelper.dataToText(negotiation.data));
       
   }
 }
