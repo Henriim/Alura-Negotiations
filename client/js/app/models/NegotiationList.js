@@ -1,13 +1,13 @@
 class NegotiationList{
   constructor(){
-    this._negoatiations = []
+    this._negotiations = [];
   }
 
   add(negotiation){
-    this._negoatiations.push(negotiation);
+    this._negotiations.push(negotiation);
   }
 
   get negotiations(){
-    return this._negoatiations; 
+    return [].concat(this._negotiations); 
   }
 }
